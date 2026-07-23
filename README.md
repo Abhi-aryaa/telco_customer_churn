@@ -150,7 +150,7 @@ The app opens at `http://localhost:8501`.
 
 1. Push the repo to GitHub (including the generated `churn_model.joblib`)
 2. Go to [share.streamlit.io](https://share.streamlit.io) → sign in with GitHub
-3. Click **Create app** → **Yup, I have an app**
+3. Click **Create app** 
 4. Set:
    - **Repository**: `yourusername/telco_customer_churn`
    - **Branch**: `main`
