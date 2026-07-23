@@ -18,7 +18,7 @@ APP_DIR = Path(__file__).resolve().parent
 MODEL_PATH = APP_DIR.parent / "Model" / "churn_model.joblib"
 @st.cache_resource
 def load_artifact():
-    return joblib.load("churn_model.joblib")
+    return joblib.load(MODEL_PATH)
 
 artifact = load_artifact()
 model = artifact["model"]
