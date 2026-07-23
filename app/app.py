@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import shap
 import matplotlib.pyplot as plt
-
+from pathlib import Path
 st.set_page_config(
     page_title="Telco Customer Churn Predictor",
     page_icon="📉",
@@ -14,6 +14,8 @@ st.set_page_config(
 # ---------------------------------------------------------------
 # Load the trained pipeline (cached so it only loads once)
 # ---------------------------------------------------------------
+APP_DIR = Path(__file__).resolve().parent
+MODEL_PATH = APP_DIR.parent / "Model" / "churn_model.joblib"
 @st.cache_resource
 def load_artifact():
     return joblib.load("churn_model.joblib")

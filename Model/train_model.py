@@ -12,14 +12,19 @@ from sklearn.metrics import roc_auc_score, classification_report
 from imblearn.pipeline import Pipeline as ImbPipeline
 from imblearn.over_sampling import SMOTE
 from xgboost import XGBClassifier
+from pathlib import Path
 
 SEED = 42
 THRESHOLD = 0.45  # chosen by precision/recall/F1 tradeoff
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+CSV_PATH = SCRIPT_DIR.parent / "Dataset" / "WA_Fn-UseC_-Telco-Customer-Churn.csv"
+MODEL_OUT_PATH = SCRIPT_DIR / "churn_model.joblib"
+
 # ---------------------------------------------------------------
 # 1. Load & clean data 
 # ---------------------------------------------------------------
-df = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
+df = pd.read_csv(CSV_PATH)
 
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
 df["TotalCharges"] = df["TotalCharges"].fillna(0)
@@ -130,5 +135,5 @@ artifact = {
     "feature_names": feature_names,
 }
 
-joblib.dump(artifact, "churn_model.joblib")
-print("\nSaved model to churn_model.joblib")
+joblib.dump(artifact, MODEL_OUT_PATH)
+print(f"\nSaved model to {MODEL_OUT_PATH}")
