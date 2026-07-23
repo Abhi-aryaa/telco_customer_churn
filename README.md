@@ -123,7 +123,7 @@ This threshold intentionally favors **recall over precision** — catching 89% o
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/telco_customer_churn.git
+git clone https://github.com/Abhi-aryaa/telco_customer_churn.git
 cd telco_customer_churn
 
 # 2. Create & activate a virtual environment
