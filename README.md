@@ -152,7 +152,7 @@ The app opens at `http://localhost:8501`.
 2. Go to [share.streamlit.io](https://share.streamlit.io) → sign in with GitHub
 3. Click **Create app** 
 4. Set:
-   - **Repository**: `yourusername/telco_customer_churn`
+   - **Repository**: `github.com/Abhi-aryaa/telco_customer_churn`
    - **Branch**: `main`
    - **Main file path**: `app/app.py`
 5. Click **Deploy**
